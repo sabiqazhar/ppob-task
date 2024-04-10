@@ -94,7 +94,7 @@ router.post('/transaction', authenticateToken, async (req, res) => {
             });
         }
 
-        if (rows[0].balance > rows[0].service_tarif){
+        if (rows[0].balance < rows[0].service_tarif){
             return res.status(404).json({
                 status: 404,
                 message: "Balance anda tidak mencukupi, silahkan TOPUP"
